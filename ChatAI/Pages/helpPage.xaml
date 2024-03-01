@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    xmlns:local="using:ChatAI.Pages"
+    x:Class="ChatAI.Pages.helpPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:behaviors="using:CommunityToolkit.WinUI.Behaviors"
+      xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalAlignment="Stretch">
+        <StackPanel MaxWidth="480">
+            <Grid Height="100"
+                  Padding="12">
+                <TextBlock HorizontalTextAlignment="Center" HorizontalAlignment="Center"  Text="ChatAI 帮助" FontFamily="微软雅黑" FontSize="48"/>
+                <interactivity:Interaction.Behaviors>
+                    <behaviors:QuickReturnHeaderBehavior />
+                </interactivity:Interaction.Behaviors>
+            </Grid>
+            <TextBlock HorizontalAlignment="Left" 
+                       TextWrapping="WrapWholeWords">
+                       <LineBreak/>
+                        <Span>
+                            <Bold>Q:为什么在我切换一个页面后，上一个页面的数据就会丢失？</Bold>
+                        </Span>
+                        <LineBreak/>
+                        <Span>
+                            <Run>A: 此程序并没有做数据保留，所以上一页面的数据便会丢失.</Run>
+                        </Span>
+                        <LineBreak/>
+                        <Span>
+                            <Bold>Q:我的数据在重启软件后丢失？</Bold>,
+                        </Span>
+                            <LineBreak/>
+                        <Span>
+                            <Run>A: 暂时还并未实现保存本地数据的功能.</Run>
+                        </Span>
+                        <LineBreak/>
+                        <Span>
+                            <Bold>Q: 如何正确的填写APIUrl？</Bold>
+                        </Span>
+                        <LineBreak/>
+                        <Span>
+                            <Run>A: 只需要将域名部分填写上即可。比如：https://example.com 或者 https://example.com/</Run>
+                        </Span>
+            </TextBlock>
+
+        </StackPanel>
+        
+    </ScrollViewer>
+</Page>

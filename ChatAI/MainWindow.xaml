@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="ChatAI.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChatAI"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Window.SystemBackdrop>
+        <DesktopAcrylicBackdrop />
+    </Window.SystemBackdrop>
+    <Grid>
+        <Border
+            Canvas.ZIndex="0"
+            IsHitTestVisible="False">
+            <Grid
+                Height="48"
+                Margin="48,0,0,0"
+                VerticalAlignment="Top"
+                Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image
+                    x:Name="AppFontIcon"
+                    Width="16"
+                    Height="16"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Source="/Icon/MAIN.png" />
+                <TextBlock
+                    Margin="12,0,0,0"
+                    Grid.Column="1"
+                    VerticalAlignment="Center"
+                    Style="{StaticResource CaptionTextBlockStyle}"
+                    Text="{x:Bind GetAppTitleFromSystem()}"/>
+            </Grid>
+        </Border>
+        <NavigationView
+            x:Name="nvSample"
+            IsTitleBarAutoPaddingEnabled="False"
+            AlwaysShowHeader="True"
+
+            Header="Default Header"
+            IsTabStop="False"
+            BackRequested="NavigationViewControl_BackRequested" 
+            SelectionChanged="NavigationView_SelectionChanged" >
+            <NavigationView.HeaderTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,-10,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="pageTitle"
+                            Background="Transparent"
+                            Height="44"
+                            VerticalAlignment="Top">
+                            <TextBlock x:Name="title" 
+                                Style="{StaticResource TitleTextBlockStyle}"
+                                FontSize="24"
+                                VerticalAlignment="Center"
+                                Text="{Binding}"/>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </NavigationView.HeaderTemplate>
+            <NavigationView.MenuItems>
+                <NavigationViewItem Icon="Message" Content="ChatAI" Tag="ChatAI" />
+                <NavigationViewItem Icon="Help" Content="帮助" Tag="HelpPage" />
+            </NavigationView.MenuItems>
+            <Frame x:Name="contentFrame" Navigated="ContentFrame_Navigated" Padding="55,10,0,0"/>
+        </NavigationView>
+    </Grid>
+</Window>
