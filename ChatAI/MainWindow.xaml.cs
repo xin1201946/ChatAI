@@ -1,25 +1,9 @@
+using ChatAI.cs;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
-using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Composition.SystemBackdrops;
-using System.Runtime.InteropServices; // For DllImport
-using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
-using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using System;
-using Windows.System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.ApplicationSettings;
-using Windows.UI;
-using Microsoft.UI;
-using ChatAI.cs;
+using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -43,10 +27,11 @@ namespace ChatAI
             settingschatai.apikey = settingschatai.GetSetting("apikey");
             settingschatai.apiurl = settingschatai.GetSetting("apiurl");
             settingschatai.model = settingschatai.GetSetting("model");
+            settingschatai.MaxToken = int.Parse(settingschatai.GetSetting("MaxToken")); 
             bool a;
             Notifications.showinfo("ChatAIÆô¶¯³É¹¦!", "");
             a = TrySetAcrylicBackdrop(true);
-            nvSample.SelectedItem =nvSample.MenuItems.OfType<NavigationViewItem>().First();
+            nvSample.SelectedItem = nvSample.MenuItems.OfType<NavigationViewItem>().First();
             contentFrame.Navigate(
                        typeof(ChatAI.Pages.ChatAI),
                        null,
@@ -121,7 +106,7 @@ namespace ChatAI
             }
         }
 
-       
+
         private void NavigationView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
         {
             var selectedItem = (NavigationViewItem)args.SelectedItem;
@@ -149,6 +134,6 @@ namespace ChatAI
             return Windows.ApplicationModel.Package.Current.DisplayName;
         }
 
-        
+
     }
 }

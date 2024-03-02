@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34607.79
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ChatAI (Package)", "ChatAI (Package)\ChatAI (Package).wapproj", "{176E9B1E-A74C-4CB5-9D57-96253F5AB17A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatAI", "ChatAI\ChatAI.csproj", "{9190942E-70F9-4121-8F44-6525D4EC0561}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ChatAI", "ChatAI\ChatAI.csproj", "{9190942E-70F9-4121-8F44-6525D4EC0561}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

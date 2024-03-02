@@ -11,6 +11,8 @@
     <ApplicationIcon>ico.ico</ApplicationIcon>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <SignAssembly>False</SignAssembly>
+    <FileVersion>1.0.3.0</FileVersion>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Pages\ChatAI.xaml" />

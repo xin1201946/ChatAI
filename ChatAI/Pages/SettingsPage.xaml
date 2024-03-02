@@ -55,11 +55,11 @@
                         <controls:SettingsCard Header="保存设置">
                             <Button Content="保存" Name="savebutton" Click="savebutton_Click" />
                         </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left" >
+                        <controls:SettingsCard ContentAlignment="Left"   Header="API_Key:">
 
-                            <TextBox AcceptsReturn="False"  PlaceholderText="API_KEY" Name="API_KEY_TEXTBOX"/>
+                            <TextBox  AcceptsReturn="False"  PlaceholderText="API_KEY" Name="API_KEY_TEXTBOX"/>
                         </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left">
+                        <controls:SettingsCard ContentAlignment="Left" Header="API_URL:">
 
                             <TextBox AcceptsReturn="False"  PlaceholderText="API_Url" Name="API_URL_TEXTBOX"/>
                         </controls:SettingsCard>
@@ -67,6 +67,10 @@
                        Header="选择模型"
                        HeaderIcon="{ui:FontIcon Glyph=&#xE99A;}">
                             <ComboBox SelectedIndex="0" Name="model_selected" />
+                        </controls:SettingsCard>
+                        <controls:SettingsCard Description=""
+                            Header="MaxToken:">
+                            <TextBox ui:TextBoxExtensions.ValidationMode="Dynamic"  ui:TextBoxExtensions.ValidationType="Number"  AcceptsReturn="False"  PlaceholderText="MaxTokens"  Name="MAXTOKEN_TEXTBOX"/>
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
                 </controls:SettingsExpander>

@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenAI;
-using OpenAI.Managers;
-using OpenAI.ObjectModels.RequestModels;
-using OpenAI.ObjectModels;
-using System.Windows;
-using static System.Net.WebRequestMethods;
+﻿using System.Collections.Generic;
 
 /*这个类主要存储保存在内存的各项设置，也提供读取/写入数据的函数*/
 namespace ChatAI.cs
 {
     class settingschatai
     {
-        static public string apikey="sk-";
-        static public string apiurl= "https://api.openai.com/";
-        static public string model="gpt-3.5-turbo";
+        static public string apikey = "sk-";
+        static public string apiurl = "https://api.openai.com/";
+        static public string model = "gpt-3.5-turbo";
+        static public int MaxToken = 500;
         const string GUIDCODE = "1548C561-AE3C-460A-BBD7-A77EF186E66D";
         static public string GUID = GUIDCODE;
-        static public List<string> models= new List<string> { 
+        static public List<string> models = new List<string> {
             "gpt-3.5-turbo",
             "gpt-3.5-turbo-0301",
             "gpt-3.5-turbo-16k",
@@ -54,6 +45,7 @@ namespace ChatAI.cs
                 localSettings.Containers["SettingContainer"].Values["apikey"] = "sk-";
                 localSettings.Containers["SettingContainer"].Values["apiurl"] = "https://api.openai.com/";
                 localSettings.Containers["SettingContainer"].Values["model"] = "gpt-3.5-turbo";
+                localSettings.Containers["SettingContainer"].Values["MaxToken"] = "500";
             }
         }
 
@@ -73,13 +65,18 @@ namespace ChatAI.cs
                 if (name == "apiurl")
                 {
                     return "https://api.openai.com/";
-                }else if (name == "apikey")
+                }
+                else if (name == "apikey")
                 {
                     return "sk-";
                 }
                 else if (name == "model")
                 {
                     return "gpt-3.5-turbo";
+                }
+                else if (name == "MaxToken")
+                {
+                    return "500";
                 }
                 return "NULL";
             }

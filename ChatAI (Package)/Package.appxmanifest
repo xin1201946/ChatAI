@@ -51,6 +51,12 @@
 					</com:ExeServer>
 				</com:ComServer>
 			</com:Extension>
+			<uap:Extension Category="windows.protocol">
+				<uap:Protocol Name="chatai" DesiredView="default">
+					<uap:Logo>MAIN.png</uap:Logo>
+					<uap:DisplayName>ChatAI</uap:DisplayName>
+				</uap:Protocol>
+			</uap:Extension>
 
 		</Extensions>
       <uap:VisualElements
@@ -70,6 +76,8 @@
     <Capability Name="internetClient"/>
     <uap2:Capability Name="spatialPerception"/>
     <uap:Capability Name="userAccountInformation"/>
+    <Capability Name="internetClientServer"/>
+    <Capability Name="allJoyn"/>
     <DeviceCapability Name="location"/>
   </Capabilities>
 </Package>
