@@ -21,25 +21,9 @@
             </Grid>
             <TextBlock HorizontalAlignment="Left" 
                        TextWrapping="WrapWholeWords">
-                       <LineBreak/>
-                        <Span>
-                            <Bold>Q:为什么在我切换一个页面后，上一个页面的数据就会丢失？</Bold>
-                        </Span>
                         <LineBreak/>
                         <Span>
-                            <Run>A: 此程序并没有做数据保留，所以上一页面的数据便会丢失.</Run>
-                        </Span>
-                        <LineBreak/>
-                        <Span>
-                            <Bold>Q:我的数据在重启软件后丢失？</Bold>,
-                        </Span>
-                            <LineBreak/>
-                        <Span>
-                            <Run>A: 暂时还并未实现保存本地数据的功能.</Run>
-                        </Span>
-                        <LineBreak/>
-                        <Span>
-                            <Bold>Q: 如何正确的填写APIUrl？</Bold>
+                            <Bold>Q: 如何填写APIUrl？</Bold>
                         </Span>
                         <LineBreak/>
                         <Span>

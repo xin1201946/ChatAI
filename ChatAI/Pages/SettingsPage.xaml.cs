@@ -32,7 +32,6 @@ namespace ChatAI.Pages
             var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
             VersionText.Text = "Version:" + version;
             MAXTOKEN_TEXTBOX.Text = settingschatai.MaxToken.ToString();
-            GUIDTEXT.Text = "GUID: " + settingschatai.GUID;
         }
         private void savebutton_Click(object sender, RoutedEventArgs e)
         {

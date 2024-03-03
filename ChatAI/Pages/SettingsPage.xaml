@@ -55,11 +55,11 @@
                         <controls:SettingsCard Header="保存设置">
                             <Button Content="保存" Name="savebutton" Click="savebutton_Click" />
                         </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left"   Header="API_Key:">
+                        <controls:SettingsCard  Header="API_Key">
 
                             <TextBox  AcceptsReturn="False"  PlaceholderText="API_KEY" Name="API_KEY_TEXTBOX"/>
                         </controls:SettingsCard>
-                        <controls:SettingsCard ContentAlignment="Left" Header="API_URL:">
+                        <controls:SettingsCard Header="API_URL">
 
                             <TextBox AcceptsReturn="False"  PlaceholderText="API_Url" Name="API_URL_TEXTBOX"/>
                         </controls:SettingsCard>
@@ -92,7 +92,6 @@
                                 <TextBlock Text=""/>
                                 <TextBlock Text="By Canfeng" Style="{StaticResource CustomTextBlockStyle}" />
                                 <TextBlock Text="Version： " Name="VersionText" Style="{StaticResource CustomTextBlockStyle}" />
-                                <TextBlock Text="GUID: " Name="GUIDTEXT" Style="{StaticResource CustomTextBlockStyle}"  IsColorFontEnabled="True"  />
                             </StackPanel>
                         </controls:SettingsCard>
                     </controls:SettingsExpander.Items>
