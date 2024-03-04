@@ -15,7 +15,15 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" Name="ChatBox" HorizontalAlignment="Stretch" IsReadOnly="True" AcceptsReturn="True"  MinHeight="300" Margin="10" TextWrapping="Wrap" Text="" VerticalAlignment="Stretch" />
+            <ScrollViewer Grid.Row="0" x:Name="ConversationScrollViewer" VerticalScrollBarVisibility="Auto" MaxHeight="500">
+                <ItemsControl x:Name="ConversationList">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <TextBox IsReadOnly="True" Header="{Binding title}"  Text="{Binding Text}" TextWrapping="Wrap" TextAlignment="Left"   Margin="5" Foreground="{Binding Color}"/>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
