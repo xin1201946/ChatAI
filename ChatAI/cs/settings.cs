@@ -8,6 +8,7 @@ namespace ChatAI.cs
         static public string apikey = "sk-";
         static public string apiurl = "https://api.openai.com/";
         static public string model = "gpt-3.5-turbo";
+        static public string yyinfo = "用代码表达言语的魅力，用代码书写山河的壮丽";
         static public int MaxToken = 500;
         const string GUIDCODE = "1548C561-AE3C-460A-BBD7-A77EF186E66D";
         static public string GUID = GUIDCODE;

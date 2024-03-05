@@ -13,7 +13,7 @@
   <Identity
     Name="0b109868-791d-4f7d-ad0c-75409233911a"
     Publisher="CN=CanFeng"
-    Version="1.0.6.0" />
+    Version="1.0.7.0" />
    
   <mp:PhoneIdentity PhoneProductId="0b109868-791d-4f7d-ad0c-75409233911a" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

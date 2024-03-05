@@ -3,6 +3,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
 using System.Linq;
+using System.Security.Policy;
 using WinRT; // required to support Window.As<ICompositionSupportsSystemBackdrop>()
 
 // To learn more about WinUI, the WinUI project structure,
@@ -27,9 +28,12 @@ namespace ChatAI
             settingschatai.apikey = settingschatai.GetSetting("apikey");
             settingschatai.apiurl = settingschatai.GetSetting("apiurl");
             settingschatai.model = settingschatai.GetSetting("model");
-            settingschatai.MaxToken = int.Parse(settingschatai.GetSetting("MaxToken")); 
+            settingschatai.MaxToken = int.Parse(settingschatai.GetSetting("MaxToken"));
+
+            string yytext =  getWebInfo.GetinfoAsync("https://v1.hitokoto.cn/?c=f&encode=text");
+
+            Notifications.showinfo("ChatAI启动成功!", yytext);
             bool a;
-            Notifications.showinfo("ChatAI启动成功!", "");
             a = TrySetAcrylicBackdrop(true);
             nvSample.SelectedItem = nvSample.MenuItems.OfType<NavigationViewItem>().First();
             contentFrame.Navigate(
@@ -39,6 +43,7 @@ namespace ChatAI
                        );
 
         }
+        
         bool TrySetAcrylicBackdrop(bool useAcrylicThin)
         {
             if (Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController.IsSupported())

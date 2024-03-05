@@ -22,6 +22,8 @@ namespace ChatAI.Pages
     /// </summary>
     public class MessageItem
     {
+        public string infotitle { get; set; }
+        public string infoText { get; set; }
         public string Text { get; set; }
         public string title { get; set; }
         public SolidColorBrush Color { get; set; }
@@ -38,6 +40,8 @@ namespace ChatAI.Pages
             this.InitializeComponent();
 
         }
+        
+        
         private async void SendButton_Click(object sender, RoutedEventArgs e)
 
         {
